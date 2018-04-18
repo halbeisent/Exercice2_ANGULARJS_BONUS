@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="btnClick">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercice 2 ANGULARJS Bonus</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  </head>
+  <body ng-controller="btnController">
+    <button ng-click="click()">Ceci est un bouton</button>
+    <script>
+    angular.module('btnClick', [])
+    .controller('btnController', ['$scope', function($scope) {
+      $scope.click = function() {
+        alert('Bonjour je suis une alerte');
+      }
+    }]);
+    </script>
+  </body>
+</html>
