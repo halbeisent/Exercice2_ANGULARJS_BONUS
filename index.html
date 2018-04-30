@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="fr" ng-app="btnClick">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Exercice 2 ANGULARJS Bonus</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   </head>
   <body ng-controller="btnController">
-    <button ng-click="click()">Ceci est un bouton</button>
+    <input type="text" name="test" ng-model="test" />
+    <button ng-click="showAlert()">Ceci est un bouton</button>
     <script>
-    angular.module('btnClick', [])
-    .controller('btnController', ['$scope', function($scope) {
-      $scope.click = function() {
-        alert('Bonjour je suis une alerte');
-      }
+    //Création du module angular btnClick
+    var alertApp = angular.module('btnClick', []);
+    //Création du controller alertApp qui appelle le $scope
+    alertApp.controller('btnController', ['$scope', function($scope) {
+      $scope.showAlert = function() {
+        alert($scope.test);
+        $scope.test = 'ok';
+      };
     }]);
     </script>
   </body>
